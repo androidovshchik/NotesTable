@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+        app:cpv_colorPresets="@array/colors"
+        app:defaultValue="@color/md_purple_500"
+        app:iconSpaceReserved="false"
+        app:key="wait_office_color"
+        app:title="Цвет статуса ждет офис" />
+
+    <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+        app:cpv_colorPresets="@array/colors"
+        app:defaultValue="@color/md_green_500"
+        app:iconSpaceReserved="false"
+        app:key="there_color"
+        app:title="Цвет статуса там" />
+
+    <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+        app:cpv_colorPresets="@array/colors"
+        app:defaultValue="@color/md_yellow_500"
+        app:iconSpaceReserved="false"
+        app:key="order_color"
+        app:title="Цвет статуса заказ" />
+
+    <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+        app:cpv_colorPresets="@array/colors"
+        app:defaultValue="@color/md_brown_500"
+        app:iconSpaceReserved="false"
+        app:key="turn_back_color"
+        app:title="Цвет статуса разворот" />
+
+    <com.jaredrummler.android.colorpicker.ColorPreferenceCompat
+        app:cpv_colorPresets="@array/colors"
+        app:defaultValue="@android:color/white"
+        app:iconSpaceReserved="false"
+        app:key="free_color"
+        app:title="Цвет статуса свободен" />
+
+</PreferenceScreen>

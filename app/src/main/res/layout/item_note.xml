@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_grey_100"
+    android:paddingBottom="2dp">
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:hint="Описание"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/md_grey_500"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.6"
+        tools:text="Text Text Text Text Text Text Text Text Text Text Text Text" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/md_grey_300"
+        android:foreground="?attr/selectableItemBackground"
+        android:hint="Имя"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/md_grey_500"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        tools:text="Text Text Text Text Text" />
+
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:hint="Заметка"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/md_grey_500"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintWidth_percent="0.4"
+        tools:text="Text Text Text Text Text Text Text Text Text Text Text Text" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:hint="Дата"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/md_grey_500"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_note"
+        app:layout_constraintWidth_percent="0.4"
+        tools:text="01.01.2021"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/b_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_desc,tv_note,tv_date" />
+
+    <defpackage.notestable.ProgramCheckBox
+        android:id="@+id/cb_tinged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="звонил/писал"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_text" />
+
+    <defpackage.notestable.ProgramCheckBox
+        android:id="@+id/cb_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="менял телефон"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/cb_tinged"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_text" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/b_boxes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="cb_tinged,cb_phone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_days"
+        app:layout_constraintTop_toBottomOf="@+id/b_boxes" />
+
+    <TextView
+        android:id="@+id/tv_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:hint="Дни"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/md_grey_500"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/mb_status"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mb_status"
+        tools:text="100"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
