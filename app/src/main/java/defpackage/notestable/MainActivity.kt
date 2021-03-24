@@ -1,7 +1,6 @@
 package defpackage.notestable
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
@@ -83,10 +82,7 @@ class MainActivity : AppCompatActivity(), NotesAdapter.Listener, SwipeCallback.L
         if (isMarshmallowPlus()) {
             if (!powerManager.isIgnoringBatteryOptimizations(packageName)) {
                 startActivityForResult(
-                    Intent(
-                        Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
-                        Uri.fromParts("package", packageName, null)
-                    ), 1
+                    Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS), 1
                 )
             }
         }
