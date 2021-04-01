@@ -36,4 +36,10 @@
         app:key="free_color"
         app:title="Цвет статуса свободен" />
 
+    <EditTextPreference
+        app:defaultValue="4,6"
+        app:iconSpaceReserved="false"
+        app:key="there_days"
+        app:title="Дни статуса там" />
+
 </PreferenceScreen>
