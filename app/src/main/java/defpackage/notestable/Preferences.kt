@@ -17,4 +17,6 @@ class Preferences(context: Context) : KotprefModel(context) {
     var turnBackColor by intPref(context.getColorOf(R.color.md_brown_500), "turn_back_color")
 
     var freeColor by intPref(context.getColorOf(android.R.color.white), "free_color")
+
+    var thereDays by stringPref("4,6", "there_days")
 }

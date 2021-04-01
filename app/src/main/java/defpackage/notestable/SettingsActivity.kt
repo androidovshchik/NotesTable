@@ -43,11 +43,17 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
+        val preferences = Preferences(requireContext())
         val thereDays = findPreference<EditTextPreference>("there_days")
+        thereDays?.summary = preferences.thereDays
         thereDays?.setOnBindEditTextListener {
             it.inputType = InputType.TYPE_CLASS_NUMBER
             it.keyListener = DigitsKeyListener.getInstance("0123456789,")
             it.setSelection(it.text.length)
+        }
+        thereDays?.setOnPreferenceChangeListener { preference, newValue ->
+            preference.summary = newValue.toString()
+            true
         }
     }
 }
